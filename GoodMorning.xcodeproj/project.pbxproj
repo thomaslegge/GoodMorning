@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		E9EC5F28244F1895007C6A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F27244F1895007C6A99 /* AppDelegate.swift */; };
 		E9EC5F2A244F1895007C6A99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F29244F1895007C6A99 /* SceneDelegate.swift */; };
-		E9EC5F2C244F1895007C6A99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F2B244F1895007C6A99 /* ContentView.swift */; };
+		E9EC5F2C244F1895007C6A99 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F2B244F1895007C6A99 /* WelcomeView.swift */; };
 		E9EC5F2E244F189A007C6A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EC5F2D244F189A007C6A99 /* Assets.xcassets */; };
 		E9EC5F31244F189A007C6A99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9EC5F30244F189A007C6A99 /* Preview Assets.xcassets */; };
 		E9EC5F34244F189A007C6A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9EC5F32244F189A007C6A99 /* LaunchScreen.storyboard */; };
 		E9EC5F3F244F189A007C6A99 /* GoodMorningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F3E244F189A007C6A99 /* GoodMorningTests.swift */; };
 		E9EC5F4A244F189A007C6A99 /* GoodMorningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F49244F189A007C6A99 /* GoodMorningUITests.swift */; };
+		E9EC5F58244F36C1007C6A99 /* BaseLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F57244F36C1007C6A99 /* BaseLogo.swift */; };
+		E9EC5F5A244F370B007C6A99 /* HeroText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F59244F370B007C6A99 /* HeroText.swift */; };
+		E9EC5F5C244F372F007C6A99 /* NeumorphicButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F5B244F372F007C6A99 /* NeumorphicButton.swift */; };
+		E9EC5F5E244F3BC3007C6A99 /* NeumorphicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F5D244F3BC3007C6A99 /* NeumorphicTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 		E9EC5F24244F1895007C6A99 /* GoodMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EC5F27244F1895007C6A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9EC5F29244F1895007C6A99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E9EC5F2B244F1895007C6A99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E9EC5F2B244F1895007C6A99 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		E9EC5F2D244F189A007C6A99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9EC5F30244F189A007C6A99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9EC5F33244F189A007C6A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		E9EC5F45244F189A007C6A99 /* GoodMorningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodMorningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EC5F49244F189A007C6A99 /* GoodMorningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningUITests.swift; sourceTree = "<group>"; };
 		E9EC5F4B244F189A007C6A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9EC5F57244F36C1007C6A99 /* BaseLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLogo.swift; sourceTree = "<group>"; };
+		E9EC5F59244F370B007C6A99 /* HeroText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroText.swift; sourceTree = "<group>"; };
+		E9EC5F5B244F372F007C6A99 /* NeumorphicButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicButton.swift; sourceTree = "<group>"; };
+		E9EC5F5D244F3BC3007C6A99 /* NeumorphicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +109,11 @@
 			children = (
 				E9EC5F27244F1895007C6A99 /* AppDelegate.swift */,
 				E9EC5F29244F1895007C6A99 /* SceneDelegate.swift */,
-				E9EC5F2B244F1895007C6A99 /* ContentView.swift */,
+				E9EC5F2B244F1895007C6A99 /* WelcomeView.swift */,
+				E9EC5F5D244F3BC3007C6A99 /* NeumorphicTextField.swift */,
+				E9EC5F5B244F372F007C6A99 /* NeumorphicButton.swift */,
+				E9EC5F59244F370B007C6A99 /* HeroText.swift */,
+				E9EC5F57244F36C1007C6A99 /* BaseLogo.swift */,
 				E9EC5F2D244F189A007C6A99 /* Assets.xcassets */,
 				E9EC5F32244F189A007C6A99 /* LaunchScreen.storyboard */,
 				E9EC5F35244F189A007C6A99 /* Info.plist */,
@@ -268,8 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9EC5F28244F1895007C6A99 /* AppDelegate.swift in Sources */,
+				E9EC5F58244F36C1007C6A99 /* BaseLogo.swift in Sources */,
+				E9EC5F5E244F3BC3007C6A99 /* NeumorphicTextField.swift in Sources */,
+				E9EC5F5A244F370B007C6A99 /* HeroText.swift in Sources */,
 				E9EC5F2A244F1895007C6A99 /* SceneDelegate.swift in Sources */,
-				E9EC5F2C244F1895007C6A99 /* ContentView.swift in Sources */,
+				E9EC5F2C244F1895007C6A99 /* WelcomeView.swift in Sources */,
+				E9EC5F5C244F372F007C6A99 /* NeumorphicButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
