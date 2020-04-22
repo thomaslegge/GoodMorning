@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E97D64B5245001300051522E /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D64B4245001300051522E /* WeatherDataModel.swift */; };
+		E97D64B7245001F40051522E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D64B6245001F40051522E /* WebService.swift */; };
+		E97D64B92450044A0051522E /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D64B82450044A0051522E /* WeatherDetailView.swift */; };
+		E97D64BB245004730051522E /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D64BA245004730051522E /* WeatherViewModel.swift */; };
 		E97EA71D244FF8B400C84307 /* StandardText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EA71C244FF8B400C84307 /* StandardText.swift */; };
 		E9DD0A30244FF1C200D36FD1 /* GoodMorningHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DD0A2F244FF1C200D36FD1 /* GoodMorningHome.swift */; };
 		E9EC5F28244F1895007C6A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F27244F1895007C6A99 /* AppDelegate.swift */; };
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E97D64B4245001300051522E /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
+		E97D64B6245001F40051522E /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		E97D64B82450044A0051522E /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
+		E97D64BA245004730051522E /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		E97EA71C244FF8B400C84307 /* StandardText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardText.swift; sourceTree = "<group>"; };
 		E9DD0A2F244FF1C200D36FD1 /* GoodMorningHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningHome.swift; sourceTree = "<group>"; };
 		E9EC5F24244F1895007C6A99 /* GoodMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +132,10 @@
 				E9EC5F32244F189A007C6A99 /* LaunchScreen.storyboard */,
 				E9EC5F35244F189A007C6A99 /* Info.plist */,
 				E9EC5F2F244F189A007C6A99 /* Preview Content */,
+				E97D64B4245001300051522E /* WeatherDataModel.swift */,
+				E97D64B6245001F40051522E /* WebService.swift */,
+				E97D64B82450044A0051522E /* WeatherDetailView.swift */,
+				E97D64BA245004730051522E /* WeatherViewModel.swift */,
 			);
 			path = GoodMorning;
 			sourceTree = "<group>";
@@ -285,12 +297,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97D64B92450044A0051522E /* WeatherDetailView.swift in Sources */,
+				E97D64BB245004730051522E /* WeatherViewModel.swift in Sources */,
+				E97D64B7245001F40051522E /* WebService.swift in Sources */,
 				E97EA71D244FF8B400C84307 /* StandardText.swift in Sources */,
 				E9EC5F28244F1895007C6A99 /* AppDelegate.swift in Sources */,
 				E9EC5F58244F36C1007C6A99 /* BaseLogo.swift in Sources */,
 				E9EC5F5E244F3BC3007C6A99 /* NeumorphicTextField.swift in Sources */,
 				E9EC5F5A244F370B007C6A99 /* HeroText.swift in Sources */,
 				E9DD0A30244FF1C200D36FD1 /* GoodMorningHome.swift in Sources */,
+				E97D64B5245001300051522E /* WeatherDataModel.swift in Sources */,
 				E9EC5F2A244F1895007C6A99 /* SceneDelegate.swift in Sources */,
 				E9EC5F2C244F1895007C6A99 /* WelcomeView.swift in Sources */,
 				E9EC5F5C244F372F007C6A99 /* NeumorphicButton.swift in Sources */,
@@ -458,8 +474,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GoodMorning/Preview Content\"";
+				DEVELOPMENT_TEAM = K2ZK8H2L8F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,6 +486,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLegge.GoodMorning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -477,8 +496,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GoodMorning/Preview Content\"";
+				DEVELOPMENT_TEAM = K2ZK8H2L8F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GoodMorning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,6 +508,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ThomasLegge.GoodMorning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
