@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E97EA71D244FF8B400C84307 /* StandardText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97EA71C244FF8B400C84307 /* StandardText.swift */; };
+		E9DD0A30244FF1C200D36FD1 /* GoodMorningHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DD0A2F244FF1C200D36FD1 /* GoodMorningHome.swift */; };
 		E9EC5F28244F1895007C6A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F27244F1895007C6A99 /* AppDelegate.swift */; };
 		E9EC5F2A244F1895007C6A99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F29244F1895007C6A99 /* SceneDelegate.swift */; };
 		E9EC5F2C244F1895007C6A99 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EC5F2B244F1895007C6A99 /* WelcomeView.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E97EA71C244FF8B400C84307 /* StandardText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardText.swift; sourceTree = "<group>"; };
+		E9DD0A2F244FF1C200D36FD1 /* GoodMorningHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMorningHome.swift; sourceTree = "<group>"; };
 		E9EC5F24244F1895007C6A99 /* GoodMorning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodMorning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EC5F27244F1895007C6A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9EC5F29244F1895007C6A99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				E9EC5F27244F1895007C6A99 /* AppDelegate.swift */,
 				E9EC5F29244F1895007C6A99 /* SceneDelegate.swift */,
 				E9EC5F2B244F1895007C6A99 /* WelcomeView.swift */,
+				E9DD0A2F244FF1C200D36FD1 /* GoodMorningHome.swift */,
+				E97EA71C244FF8B400C84307 /* StandardText.swift */,
 				E9EC5F5D244F3BC3007C6A99 /* NeumorphicTextField.swift */,
 				E9EC5F5B244F372F007C6A99 /* NeumorphicButton.swift */,
 				E9EC5F59244F370B007C6A99 /* HeroText.swift */,
@@ -279,10 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97EA71D244FF8B400C84307 /* StandardText.swift in Sources */,
 				E9EC5F28244F1895007C6A99 /* AppDelegate.swift in Sources */,
 				E9EC5F58244F36C1007C6A99 /* BaseLogo.swift in Sources */,
 				E9EC5F5E244F3BC3007C6A99 /* NeumorphicTextField.swift in Sources */,
 				E9EC5F5A244F370B007C6A99 /* HeroText.swift in Sources */,
+				E9DD0A30244FF1C200D36FD1 /* GoodMorningHome.swift in Sources */,
 				E9EC5F2A244F1895007C6A99 /* SceneDelegate.swift in Sources */,
 				E9EC5F2C244F1895007C6A99 /* WelcomeView.swift in Sources */,
 				E9EC5F5C244F372F007C6A99 /* NeumorphicButton.swift in Sources */,

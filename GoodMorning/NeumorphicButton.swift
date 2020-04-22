@@ -11,21 +11,24 @@ import SwiftUI
 struct NeumorphicButton: View {
     @State var isPressed = false
     
+    var frameWidth = 316
+    var frameHeight = 58
+    
+    var labelText = "Next"
+    
     var onPress: () -> Void
     
     var body: some View {
         
         RoundedRectangle(cornerRadius: 12, style: .continuous)
-            .frame(width: 316, height: 58)
+            .frame(width: CGFloat(self.frameWidth), height: CGFloat(self.frameHeight))
             .foregroundColor(Color("Background"))
             .shadow(color: self.isPressed ? Color("Background") : Color(.white), radius: 3, x: -4, y: -4)
             .shadow(color: self.isPressed ? Color("Background") : Color("DarkShadow"), radius: 3, x: 4, y: 4)
             .overlay(
                 ZStack {
-                    Text("Next")
-                        .font(.system(size: 21, weight: Font.Weight.semibold, design: Font.Design.rounded))
-                        .foregroundColor(Color("Text"))
-                    
+                    StandardText(textString: labelText)
+
                     RoundedRectangle(cornerRadius: 15)
                         .stroke(Color("Background"), lineWidth: 4)
                         .shadow(color: self.isPressed ? Color("DarkShadow") : Color("Background"), radius: 3, x: 5, y: 5)

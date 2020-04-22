@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct NeumorphicTextField: View {
-    @State var textInput: String = "Hello,"
+    @State var textInput: String = ""
+    var textFill = "Hello"
 
     var body: some View {
         RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -19,7 +20,7 @@ struct NeumorphicTextField: View {
             .shadow(color: Color("DarkShadow"), radius: 3, x: 4, y: 4)
             .overlay(
                 ZStack {
-                    TextField("Hello", text:$textInput)
+                    TextField(textFill, text:$textInput)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: Font.Weight.semibold, design: Font.Design.rounded))
                         .foregroundColor(Color("Text"))
