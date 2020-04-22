@@ -13,7 +13,8 @@ struct WeatherDetailView: View {
     @ObservedObject var weather = WeatherViewModel()
     
     var body: some View {
-        Text(weather.weatherPublished?.name ?? "")
+        Text(weather.weatherPublished?.name ?? "Hello")
+            .foregroundColor(.gray)
     }
 }
 
