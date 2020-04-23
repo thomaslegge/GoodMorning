@@ -11,10 +11,27 @@ import SwiftUI
 struct WelcomeView: View {
     
     @State var pageNumber = 1
-    
     @State var next: Bool = false
-    
     @State var inputFocus = false
+    
+    @State private var nameInput: String = ""
+    @State private var cityInput: String = ""
+    
+    /// Saves user inputs to userdefaults #TODO: Refactor as well as loading
+    func saveUserData() {
+        let userSave: UserData = UserData()
+        
+        userSave.name = nameInput
+        userSave.city = cityInput
+        
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(userSave) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "userData")
+        } else {
+            print("Failed to save userData.")
+        }
+    }
     
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -83,7 +100,7 @@ struct WelcomeView: View {
                     }
                     
                     if pageNumber == 2 {
-                        VStack {
+                        VStack(spacing: 24) {
                             HStack {
                                 HeroText(heroString: "Tell us about yourself", heroWidth: 300, heroHeight: 130)
                                 
@@ -94,17 +111,17 @@ struct WelcomeView: View {
                             
                             Spacer()
                             
-                            NeumorphicTextField(textFill: "Your Name?")
+                            NeumorphicTextField(textInput: $nameInput, textFill: "Your Name?")
                                 .onTapGesture {
                                     self.inputFocus = true
                             }
                             
-                            NeumorphicTextField(textFill: "Where are you waking up?")
+                            NeumorphicTextField(textInput: $cityInput, textFill: "Where are you waking up?")
                                 .onTapGesture {
                                     self.inputFocus = true
                             }
                             
-                            NeumorphicButton(onPress: nextPage)
+                            NeumorphicButton(onPress: {self.nextPage(); self.saveUserData()})
                             
                         }
                         .offset( x: 0, y: -20)
@@ -128,7 +145,6 @@ struct WelcomeView: View {
     }
     
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

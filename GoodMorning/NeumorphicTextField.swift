@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NeumorphicTextField: View {
-    @State var textInput: String = ""
+    @Binding var textInput: String
     var textFill = "Hello"
 
     var body: some View {
@@ -36,12 +36,5 @@ struct NeumorphicTextField: View {
                             RoundedRectangle(cornerRadius: 15)
                     )
             })
-    }
-}
-
-
-struct NeumorphicTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        NeumorphicTextField()
     }
 }

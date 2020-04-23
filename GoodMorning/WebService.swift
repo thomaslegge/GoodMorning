@@ -38,5 +38,31 @@ class WebService {
             }
         }.resume()
     }
+    
+    func getNewsData(completion: @escaping (Result<NewsData, Error>) -> ()) {
+        
+        guard let url = URL(string: "http://newsapi.org/v2/top-headlines?apiKey=bb82b42734674b1e8147c1f448b6d748&country=nz&pageSize=3") else {
+            fatalError("Invalid URL")
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                DispatchQueue.main.async {
+                    completion(.failure(error!))
+                }
+                return
+            }
+            
+            do {
+                let news = try JSONDecoder().decode(NewsData.self, from: data)
+                DispatchQueue.main.async {
+                    //print(news)
+                    completion(.success(news))
+                }
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
 }
 
