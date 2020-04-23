@@ -10,8 +10,10 @@ import SwiftUI
 
 struct NeumorphicTextField: View {
     @Binding var textInput: String
+    var onTapField: () -> Void
+    var onLoseFocus: () -> Void
     var textFill = "Hello"
-
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 12, style: .continuous)
             .frame(width: 316, height: 58)
@@ -20,10 +22,14 @@ struct NeumorphicTextField: View {
             .shadow(color: Color("DarkShadow"), radius: 3, x: 4, y: 4)
             .overlay(
                 ZStack {
-                    TextField(textFill, text:$textInput)
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 21, weight: Font.Weight.semibold, design: Font.Design.rounded))
-                        .foregroundColor(Color("Text"))
+                    TextField(textFill, text:$textInput, onEditingChanged: { focus in
+                        focus ? self.onTapField() : self.onLoseFocus()
+                    }) {
+                        print("commit")
+                    }
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 21, weight: Font.Weight.semibold, design: Font.Design.rounded))
+                    .foregroundColor(Color("Text"))
                     
                     RoundedRectangle(cornerRadius: 15)
                         .stroke(Color("Background"), lineWidth: 4)

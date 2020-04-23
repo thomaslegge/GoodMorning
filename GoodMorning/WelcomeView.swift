@@ -113,18 +113,21 @@ struct WelcomeView: View {
                             
                             Spacer()
                             
-                            NeumorphicTextField(textInput: $nameInput, textFill: "Your Name?")
-                                .onTapGesture {
-                                    self.inputFocus = true
-                            }
+                            NeumorphicTextField(
+                                textInput: $nameInput,
+                                onTapField: {self.inputFocus=true},
+                                onLoseFocus: {self.inputFocus=false},
+                                textFill: "Your Name?"
+                            )
                             
-                            NeumorphicTextField(textInput: $cityInput, textFill: "Where are you waking up?")
-                                .onTapGesture {
-                                    self.inputFocus = true
-                            }
+                            NeumorphicTextField(
+                                textInput: $cityInput,
+                                onTapField: {self.inputFocus=true},
+                                onLoseFocus: {self.inputFocus=false},
+                                textFill: "Where are you waking up?"
+                            )
                             
                             NeumorphicButton(onPress: {
-//                                self.nextPage();
                                 self.saveUserData();
                                 self.togglePage()})
                             
