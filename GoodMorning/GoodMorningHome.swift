@@ -91,14 +91,15 @@ struct GoodMorningHome: View {
                                         
                                         Image(systemName: "cloud.sun.rain.fill")
                                             .font(.system(size: 42, weight: Font.Weight.semibold, design: Font.Design.rounded))
-                                            .foregroundColor(Color("Text"))
+                                            .foregroundColor(Color("Text")
+                                        ).allowsHitTesting(false)
                                         
                                         Spacer()
                                         
                                         VStack {
                                             StandardText(textString: "\(String(format: "%.1f", observedWeather.weatherPublished?.main?.tempMin ?? 0))° - \(String(format: "%.1f", observedWeather.weatherPublished?.main?.tempMax ?? 0))°")
                                             StandardText(textString: "Feels Like: \(String(format: "%.1f", observedWeather.weatherPublished?.main?.temp ?? 0))°" )
-                                        }
+                                        }.allowsHitTesting(false)
                                         
                                         Spacer()
                                     }

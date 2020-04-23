@@ -25,7 +25,7 @@ struct NeumorphicTextField: View {
                     TextField(textFill, text:$textInput, onEditingChanged: { focus in
                         focus ? self.onTapField() : self.onLoseFocus()
                     }) {
-                        print("commit")
+                        // #TODO: print("commit")
                     }
                     .multilineTextAlignment(.center)
                     .font(.system(size: 21, weight: Font.Weight.semibold, design: Font.Design.rounded))
