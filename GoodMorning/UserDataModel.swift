@@ -9,7 +9,7 @@
 import Foundation
 
 class UserData: NSObject, Codable {
-    var isFirstTimeStartup: Bool? = true
+    var isFirstTimeStartup: Bool? = false
     var name: String?
     var city: String?
 }

@@ -19,12 +19,15 @@ struct WelcomeView: View {
     @State private var nameInput: String = ""
     @State private var cityInput: String = ""
     
+    @State private var showAlertInput = false
+    
     /// Saves user inputs to userdefaults #TODO: Refactor as well as loading
     func saveUserData() {
         let userSave: UserData = UserData()
         
         userSave.name = nameInput
         userSave.city = cityInput
+        userSave.isFirstTimeStartup = true
         
         let jsonEncoder = JSONEncoder()
         if let savedData = try? jsonEncoder.encode(userSave) {
@@ -128,11 +131,22 @@ struct WelcomeView: View {
                             )
                             
                             NeumorphicButton(onPress: {
-                                self.saveUserData();
-                                self.togglePage()})
-                            
+                                if self.nameInput == "" || self.cityInput == "" {
+                                    self.showAlertInput = true
+                                } else {
+                                    self.saveUserData();
+                                    self.togglePage()}
+                                }
+                            )
                         }
                         .offset( x: 0, y: -20)
+                        .alert(isPresented: $showAlertInput) { () -> Alert in
+                            Alert(
+                                title: Text("Missing Input!"),
+                                message: Text("Your name or city is empty."),
+                                dismissButton: .default(Text("Got it!"))
+                            )
+                        }
                     }
                     
                     if pageNumber == 3 {
