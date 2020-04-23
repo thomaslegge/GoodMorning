@@ -10,6 +10,8 @@ import SwiftUI
 
 struct WelcomeView: View {
     
+    var togglePage: () -> Void
+    
     @State var pageNumber = 1
     @State var next: Bool = false
     @State var inputFocus = false
@@ -121,7 +123,10 @@ struct WelcomeView: View {
                                     self.inputFocus = true
                             }
                             
-                            NeumorphicButton(onPress: {self.nextPage(); self.saveUserData()})
+                            NeumorphicButton(onPress: {
+//                                self.nextPage();
+                                self.saveUserData();
+                                self.togglePage()})
                             
                         }
                         .offset( x: 0, y: -20)
@@ -148,6 +153,8 @@ struct WelcomeView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView(pageNumber: 2)
+        WelcomeView(togglePage: {
+            print("Preview_TogglePage")
+        }, pageNumber: 2)
     }
 }

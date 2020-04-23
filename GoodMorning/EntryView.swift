@@ -18,12 +18,10 @@ struct EntryView: View {
     var body: some View {
         ZStack {
             if showWelcome {
-                WelcomeView()
+                WelcomeView(togglePage: togglePage)
             } else {
-                GoodMorningHome()
+                GoodMorningHome(togglePage: togglePage)
             }
-            
-            NeumorphicButton(onPress: { self.togglePage() })
         }
     }
 }

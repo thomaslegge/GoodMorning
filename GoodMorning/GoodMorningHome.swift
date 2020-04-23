@@ -9,16 +9,22 @@
 import SwiftUI
 
 struct GoodMorningHome: View {
+    
+    var togglePage: () -> Void
+    
     @ObservedObject var observedWeather = WeatherViewModel()
     @ObservedObject var observedNews = NewsViewModel()
     var userLoad = UserData()
     
-    init() {
+    init(togglePage: @escaping () -> Void) {
+        
+        self.togglePage = togglePage
+        
         let defaults = UserDefaults.standard
-
+        
         if let savedUser = defaults.object(forKey: "userData") as? Data {
             let jsonDecoder = JSONDecoder()
-
+            
             do {
                 print("Pre Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
                 userLoad = try jsonDecoder.decode(UserData.self, from: savedUser)
@@ -41,16 +47,19 @@ struct GoodMorningHome: View {
                         VStack {
                             HeroText(heroString: "Good Morning,", heroWidth: 330, heroHeight: 60)
                                 .offset(x: -10)
+                                .onTapGesture {
+                                    self.togglePage()
+                            }
                             if (userLoad.name == nil) {
-                                HeroText(heroString: "Good Morning,", heroWidth: 330, heroHeight: 60)
-                                .offset(x: -10)
+                                HeroText(heroString: "How are you?", heroWidth: 330, heroHeight: 60)
+                                    .offset(x: -10)
                             }
                             else {
                                 HeroText(heroString: "\(userLoad.name!)", heroWidth: 330, heroHeight: 60)
-                                .offset(x: -10)
+                                    .offset(x: -10)
                             }
-//                            HeroText(heroString: "Thomas", heroWidth: 330, heroHeight: 60)
-//                                .offset(x: -10)
+                            //                            HeroText(heroString: "Thomas", heroWidth: 330, heroHeight: 60)
+                            //                                .offset(x: -10)
                             HStack {
                                 if (userLoad.city == nil) {
                                     StandardText(textString: "Today.")
@@ -138,6 +147,8 @@ struct GoodMorningHome: View {
 
 struct GoodMorningHome_Previews: PreviewProvider {
     static var previews: some View {
-        GoodMorningHome()
+        GoodMorningHome(togglePage: {
+            print("Preview_TogglePage")
+        })
     }
 }
