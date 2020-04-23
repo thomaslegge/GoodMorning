@@ -41,8 +41,16 @@ struct GoodMorningHome: View {
                         VStack {
                             HeroText(heroString: "Good Morning,", heroWidth: 330, heroHeight: 60)
                                 .offset(x: -10)
-                            HeroText(heroString: "Thomas", heroWidth: 330, heroHeight: 60)
+                            if (userLoad.name == nil) {
+                                HeroText(heroString: "Good Morning,", heroWidth: 330, heroHeight: 60)
                                 .offset(x: -10)
+                            }
+                            else {
+                                HeroText(heroString: "\(userLoad.name!)", heroWidth: 330, heroHeight: 60)
+                                .offset(x: -10)
+                            }
+//                            HeroText(heroString: "Thomas", heroWidth: 330, heroHeight: 60)
+//                                .offset(x: -10)
                             HStack {
                                 if (userLoad.city == nil) {
                                     StandardText(textString: "Today.")
