@@ -26,9 +26,9 @@ struct GoodMorningHome: View {
             let jsonDecoder = JSONDecoder()
             
             do {
-                print("Pre Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
+                //print("Pre Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
                 userLoad = try jsonDecoder.decode(UserData.self, from: savedUser)
-                print("Post Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
+                //print("Post Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
             } catch {
                 print("Failed to load userData")
             }
@@ -58,8 +58,7 @@ struct GoodMorningHome: View {
                                 HeroText(heroString: "\(userLoad.name!)", heroWidth: 330, heroHeight: 60)
                                     .offset(x: -10)
                             }
-                            //                            HeroText(heroString: "Thomas", heroWidth: 330, heroHeight: 60)
-                            //                                .offset(x: -10)
+                            
                             HStack {
                                 if (userLoad.city == nil) {
                                     StandardText(textString: "Today.")
@@ -89,7 +88,7 @@ struct GoodMorningHome: View {
                                         
                                         Spacer()
                                         
-                                        Image(systemName: "cloud.sun.rain.fill")
+                                        Image(systemName: observedWeather.weatherIconName ?? "sun.max.fill")
                                             .font(.system(size: 42, weight: Font.Weight.semibold, design: Font.Design.rounded))
                                             .foregroundColor(Color("Text")
                                         ).allowsHitTesting(false)
@@ -97,7 +96,7 @@ struct GoodMorningHome: View {
                                         Spacer()
                                         
                                         VStack {
-                                            StandardText(textString: "\(String(format: "%.1f", observedWeather.weatherPublished?.main?.tempMin ?? 0))° - \(String(format: "%.1f", observedWeather.weatherPublished?.main?.tempMax ?? 0))°")
+                                            StandardText(textString: "\(String(format: "%.1f", observedWeather.weatherPublished?.main?.tempMin ?? 0))° ~ \(String(format: "%.1f", observedWeather.weatherPublished?.main?.tempMax ?? 0))°")
                                             StandardText(textString: "Feels Like: \(String(format: "%.1f", observedWeather.weatherPublished?.main?.temp ?? 0))°" )
                                         }.allowsHitTesting(false)
                                         
@@ -106,20 +105,27 @@ struct GoodMorningHome: View {
                             )
                             
                             VStack {
-                                StandardText(textString: "Overcast Clouds")
-                                StandardText(textString: "Moderate chance of rain")
-                                StandardText(textString: "Bring a light jacket")
+                                StandardText(textString: observedWeather.weatherDescStylised ?? "")
+                                StandardText(textString: observedWeather.weatherSecondary ?? "")
+                                StandardText(textString: observedWeather.weatherBringJacket ?? "")
+                                
                             }
                             
-                            ForEach(0 ..< (observedNews.newsPublished?.totalResults ?? 0)) { count in
-                                NeumorphicButton(
-                                    labelText: (self.observedNews.newsPublished?.articles?[count].title ?? ""),
-                                    onPress: {
-                                        UIApplication.shared.open(URL(string: (self.observedNews.newsPublished?.articles?[count].url ?? ""))!)
-                                        
-                                }
-                                )
-                            }
+                            NeumorphicButton(
+                                labelText: (self.observedNews.newsPublished?.articles?[0].title ?? ""),
+                                onPress: {
+                                    UIApplication.shared.open(URL(string: (self.observedNews.newsPublished?.articles?[0].url ?? ""))!)
+                            })
+                            NeumorphicButton(
+                                labelText: (self.observedNews.newsPublished?.articles?[1].title ?? ""),
+                                onPress: {
+                                    UIApplication.shared.open(URL(string: (self.observedNews.newsPublished?.articles?[1].url ?? ""))!)
+                            })
+                            NeumorphicButton(
+                                labelText: (self.observedNews.newsPublished?.articles?[2].title ?? ""),
+                                onPress: {
+                                    UIApplication.shared.open(URL(string: (self.observedNews.newsPublished?.articles?[2].url ?? ""))!)
+                            })
                             
                             VStack {
                                 StandardText(textString: "News from NewsAPI.org", fontSize: 12)
@@ -136,11 +142,7 @@ struct GoodMorningHome: View {
                     .offset( x: 0, y: -10)
                 }
                 
-                
-                //Spacer()
-                
                 BaseLogo()
-                
             }
         }
     }

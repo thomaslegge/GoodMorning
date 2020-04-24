@@ -28,7 +28,7 @@ struct NeumorphicButton: View {
             .overlay(
                 ZStack {
                     StandardText(textString: labelText)
-
+                        .frame(maxWidth: 256, maxHeight: 1)
                     RoundedRectangle(cornerRadius: 15)
                         .stroke(Color("Background"), lineWidth: 4)
                         .shadow(color: self.isPressed ? Color("DarkShadow") : Color("Background"), radius: 3, x: 5, y: 5)

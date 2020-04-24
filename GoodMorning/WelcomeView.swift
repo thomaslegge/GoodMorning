@@ -17,8 +17,8 @@ struct WelcomeView: View {
     @State var inputFocus = false
     
     @State private var nameInput: String = ""
-    @State private var cityInput: String = ""
-    
+    var cityOptions = ["Auckland", "Wellington", "Christchurch", "Tauranga", "Queenstown"]
+    @State private var cityInput = 0
     @State private var showAlertInput = false
     
     /// Saves user inputs to userdefaults #TODO: Refactor as well as loading
@@ -26,8 +26,8 @@ struct WelcomeView: View {
         let userSave: UserData = UserData()
         
         userSave.name = nameInput
-        userSave.city = cityInput
-        userSave.isFirstTimeStartup = true
+        userSave.city = cityOptions[cityInput]
+        userSave.isFirstTimeStartup = false
         
         let jsonEncoder = JSONEncoder()
         if let savedData = try? jsonEncoder.encode(userSave) {
@@ -67,7 +67,6 @@ struct WelcomeView: View {
     
     var body: some View {
         ZStack {
-            
             Color("Background").edgesIgnoringSafeArea(.all)
                 .onTapGesture {
                     self.endFocus()
@@ -116,56 +115,76 @@ struct WelcomeView: View {
                             
                             Spacer()
                             
-                            NeumorphicTextField(
-                                textInput: $nameInput,
-                                onTapField: {self.inputFocus=true},
-                                onLoseFocus: {self.inputFocus=false},
-                                textFill: "Your Name?"
-                            )
                             
-                            NeumorphicTextField(
-                                textInput: $cityInput,
-                                onTapField: {self.inputFocus=true},
-                                onLoseFocus: {self.inputFocus=false},
-                                textFill: "Where are you waking up?"
-                            )
-                            
-                            NeumorphicButton(onPress: {
-                                if self.nameInput == "" || self.cityInput == "" {
-                                    self.showAlertInput = true
-                                } else {
-                                    self.saveUserData();
-                                    self.togglePage()}
-                                }
-                            )
-                        }
-                        .offset( x: 0, y: -20)
-                        .alert(isPresented: $showAlertInput) { () -> Alert in
-                            Alert(
-                                title: Text("Missing Input!"),
-                                message: Text("Your name or city is empty."),
-                                dismissButton: .default(Text("Got it!"))
-                            )
+                            VStack {
+                                Spacer()
+                                
+                                NeumorphicTextField(
+                                    textInput: $nameInput,
+                                    onTapField: {self.inputFocus=true},
+                                    onLoseFocus: {self.inputFocus=false},
+                                    textFill: "Your Name?"
+                                )
+                                
+                                NeumorphicButton(onPress: {
+                                    if self.nameInput == "" {
+                                        self.showAlertInput = true
+                                    } else {
+                                        self.saveUserData()
+                                        self.endFocus()
+                                        self.pageNumber = 3
+                                    }
+                                })
+                            }
+                            .offset( x: 0, y: -20)
+                            .alert(isPresented: $showAlertInput) { () -> Alert in
+                                Alert(
+                                    title: Text("Missing Input!"),
+                                    message: Text("Your name or city is empty."),
+                                    dismissButton: .default(Text("Got it!"))
+                                )
+                            }
                         }
                     }
                     
                     if pageNumber == 3 {
-                        StandardText(textString: "Hello")
-                            .onTapGesture {
-                                self.pageNumber = 1
-                        }
+                        VStack(spacing: 24) {
+                            HStack {
+                                HeroText(heroString: "Where are you waking up?", heroWidth: 300, heroHeight: 200)
+                                
+                                Spacer()
+                            }
+                            .padding(.top, 30)
+                            .padding(.leading, 25)
+                            
+                            VStack {
+                                Spacer()
+                                
+                                VStack {
+                                    Picker(selection: $cityInput, label: EmptyView()) {
+                                        ForEach(0 ..< cityOptions.count) {
+                                            StandardText(textString: self.cityOptions[$0])
+                                        }
+                                    }
+                                    .labelsHidden()
+                                }
+                            }
+                            .offset( x: 0, y: -20)
+                            
+                            NeumorphicButton(onPress: {
+                                self.saveUserData()
+                                self.togglePage()
+                            })
                     }
-                    //
-                    Spacer()
-                    //
-                    BaseLogo()
-                    //
                 }
+                Spacer()
+                BaseLogo()
             }
-            .offset(y: inputFocus ? -325 : 0)
         }
+        .offset(y: inputFocus ? -325 : 0)
     }
-    
+}
+
 }
 
 struct ContentView_Previews: PreviewProvider {

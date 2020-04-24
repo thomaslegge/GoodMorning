@@ -13,15 +13,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        let defaults = UserDefaults.standard
+        var userLoad = UserData()
+        
+        if let savedUser = defaults.object(forKey: "userData") as? Data {
+            let jsonDecoder = JSONDecoder()
+            do {
+                //print("Pre Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
+                userLoad = try jsonDecoder.decode(UserData.self, from: savedUser)
+                //print("Post Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
+            } catch {
+                print("Failed to load userData")
+            }
+        }
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = EntryView()
-
+        let contentView = EntryView(showWelcome: userLoad.isFirstTimeStartup ? true : false)
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

@@ -41,7 +41,7 @@ class WebService {
     
     func getNewsData(completion: @escaping (Result<NewsData, Error>) -> ()) {
         
-        guard let url = URL(string: "http://newsapi.org/v2/top-headlines?apiKey=bb82b42734674b1e8147c1f448b6d748&country=nz&pageSize=3") else {
+        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?apiKey=bb82b42734674b1e8147c1f448b6d748&country=nz") else {
             fatalError("Invalid URL")
         }
         

@@ -12,9 +12,6 @@ class NewsViewModel: ObservableObject {
     @Published var newsPublished: NewsData? = nil
     
     init() {
-        
-        let DEBUG_NEWS = true
-        if DEBUG_NEWS {
             newsPublished = NewsData(
                 status: "DEBUG",
                 totalResults: 3,
@@ -22,27 +19,27 @@ class NewsViewModel: ObservableObject {
                     Article(
                         source: Source(id: "DEBUG", name: "DEBUG"),
                         author: "DEBUG",
-                        title: "DEBUG",
+                        title: "DEBUGDEBUGDEBUGDEBUG",
                         articleDescription: "DEBUG",
                         url: "http://www.example.com/",
                         urlToImage: "DEBUG",
                         publishedAt: "DEBUG",
                         content: "DEBUG"),
-                    
+
                     Article(
                         source: Source(id: "DEBUG", name: "DEBUG"),
                         author: "DEBUG",
-                        title: "DEBUG",
+                        title: "DEBUGDEBUGDEBUGDEBUG",
                         articleDescription: "DEBUG",
                         url: "http://www.example.com/",
                         urlToImage: "DEBUG",
                         publishedAt: "DEBUG",
                         content: "DEBUG"),
-                    
+
                     Article(
                         source: Source(id: "DEBUG", name: "DEBUG"),
                         author: "DEBUG",
-                        title: "DEBUG",
+                        title: "DEBUGDEBUGDEBUGDEBUG",
                         articleDescription: "DEBUG",
                         url: "http://www.example.com/",
                         urlToImage: "DEBUG",
@@ -50,15 +47,14 @@ class NewsViewModel: ObservableObject {
                         content: "DEBUG")
                 ]
             )
-        }
-        //        let result = WebService()
-        //        result.getNewsData { result in
-        //            switch result {
-        //            case .failure(let error):
-        //                print("NewsViewModel Error: ", error)
-        //            case .success(let news):
-        //                self.newsPublished = news
-        //            }
-        //        }
+//        let result = WebService()
+//        result.getNewsData { result in
+//            switch result {
+//            case .failure(let error):
+//                print("NewsViewModel Error: ", error)
+//            case .success(let news):
+//                self.newsPublished = news
+//            }
+//        }
     }
 }

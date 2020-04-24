@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct EntryView: View {
-    @State var showWelcome = true
+    @State var showWelcome: Bool
     
     func togglePage() {
         showWelcome.toggle()
@@ -26,8 +26,8 @@ struct EntryView: View {
     }
 }
 
-struct EntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        EntryView()
-    }
-}
+//struct EntryView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EntryView()
+//    }
+//}
