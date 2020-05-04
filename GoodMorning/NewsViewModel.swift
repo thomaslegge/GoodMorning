@@ -12,49 +12,50 @@ class NewsViewModel: ObservableObject {
     @Published var newsPublished: NewsData? = nil
     
     init() {
-            newsPublished = NewsData(
-                status: "DEBUG",
-                totalResults: 3,
-                articles: [
-                    Article(
-                        source: Source(id: "DEBUG", name: "DEBUG"),
-                        author: "DEBUG",
-                        title: "DEBUGDEBUGDEBUGDEBUG",
-                        articleDescription: "DEBUG",
-                        url: "http://www.example.com/",
-                        urlToImage: "DEBUG",
-                        publishedAt: "DEBUG",
-                        content: "DEBUG"),
-
-                    Article(
-                        source: Source(id: "DEBUG", name: "DEBUG"),
-                        author: "DEBUG",
-                        title: "DEBUGDEBUGDEBUGDEBUG",
-                        articleDescription: "DEBUG",
-                        url: "http://www.example.com/",
-                        urlToImage: "DEBUG",
-                        publishedAt: "DEBUG",
-                        content: "DEBUG"),
-
-                    Article(
-                        source: Source(id: "DEBUG", name: "DEBUG"),
-                        author: "DEBUG",
-                        title: "DEBUGDEBUGDEBUGDEBUG",
-                        articleDescription: "DEBUG",
-                        url: "http://www.example.com/",
-                        urlToImage: "DEBUG",
-                        publishedAt: "DEBUG",
-                        content: "DEBUG")
-                ]
-            )
-//        let result = WebService()
-//        result.getNewsData { result in
-//            switch result {
-//            case .failure(let error):
-//                print("NewsViewModel Error: ", error)
-//            case .success(let news):
-//                self.newsPublished = news
-//            }
-//        }
+//            newsPublished = NewsData(
+//                status: "DEBUG",
+//                totalResults: 3,
+//                articles: [
+//                    Article(
+//                        source: Source(id: "", name: ""),
+//                        author: "",
+//                        title: "",
+//                        articleDescription: "",
+//                        url: "http://www.example.com/",
+//                        urlToImage: "",
+//                        publishedAt: "",
+//                        content: ""),
+//
+//                    Article(
+//                        source: Source(id: "", name: ""),
+//                        author: "",
+//                        title: "",
+//                        articleDescription: "",
+//                        url: "http://www.example.com/",
+//                        urlToImage: "",
+//                        publishedAt: "",
+//                        content: ""),
+//
+//                    Article(
+//                        source: Source(id: "", name: ""),
+//                        author: "",
+//                        title: "",
+//                        articleDescription: "",
+//                        url: "http://www.example.com/",
+//                        urlToImage: "",
+//                        publishedAt: "",
+//                        content: "")
+//                ]
+//            )
+        
+        let result = WebService()
+        result.getNewsData { result in
+            switch result {
+            case .failure(let error):
+                print("NewsViewModel Error: ", error)
+            case .success(let news):
+                self.newsPublished = news
+            }
+        }
     }
 }
