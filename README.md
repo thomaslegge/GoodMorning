@@ -1,6 +1,6 @@
 # GoodMorning
 
-![Header](images/ieader.png)
+![Header](images/header.png)
 
 Draft
 
