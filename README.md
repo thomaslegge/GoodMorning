@@ -3,7 +3,12 @@
 
 The goal was to consolodate my morning routine, rather than jump between apps that have infinate scrolling, I can simply open one. The app is intentionally left simple to follow the 80 20 rule and reduce potential distractions for a calmer and more streamlined morning routine. 
 
-Nuemorphic design is making a return to the minimalist dominated world. I am quite nostaligic and very much a fan of more varitey in our UI. To me it makes the UX more joyfol and less strelie, while the modern simple proach to nue,orphic keeps distractions and clutter away.
+## Design
+Nuemorphic design is making a return to the minimalist dominated world. I am very much a fan of more varitey in our UI.
+
+![Code1](images/code1.png)
+![Code2](images/code2.png)
+![Code3](images/code3.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
