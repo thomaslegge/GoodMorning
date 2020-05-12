@@ -174,16 +174,16 @@ struct GoodMorningHome_Previews: PreviewProvider {
                 print("Preview_TogglePage")
             })
                 .previewDevice(PreviewDevice(rawValue: "iPhone 11"))
-            
-            GoodMorningHome(togglePage: {
-                print("Preview_TogglePage")
-            })
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
-            
-            GoodMorningHome(togglePage: {
-                print("Preview_TogglePage")
-            })
-                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
+//            
+//            GoodMorningHome(togglePage: {
+//                print("Preview_TogglePage")
+//            })
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro"))
+//            
+//            GoodMorningHome(togglePage: {
+//                print("Preview_TogglePage")
+//            })
+//                .previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
         }
     }
 }
