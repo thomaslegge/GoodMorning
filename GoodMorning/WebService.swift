@@ -14,9 +14,27 @@ enum WeatherError: Error {
 }
 
 class WebService {
+    
+    var userLoad = UserData()
+    
+    init() {
+                
+        if let savedUser = UserDefaults.standard.object(forKey: "userData") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                //print("Pre Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
+                userLoad = try jsonDecoder.decode(UserData.self, from: savedUser)
+                //print("Post Load", userLoad.name, userLoad.city, userLoad.isFirstTimeStartup)
+            } catch {
+                print("Failed to load userData")
+            }
+        }
+    }
+    
     func getWeatherData(completion: @escaping (Result<WeatherData, Error>) -> ()) {
-        
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Auckland,nz&appid=9b7cd1bf1c97bcc7598dac88d50b7510&units=metric") else {
+                
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=" + userLoad.cityCode() + ",nz&appid=9b7cd1bf1c97bcc7598dac88d50b7510&units=metric") else {
             fatalError("Invalid URL")
         }
         

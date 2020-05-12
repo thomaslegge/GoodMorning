@@ -27,7 +27,7 @@ struct BaseLogo: View {
                 .offset(y: -3)
         }
         .onTapGesture {
-            UIApplication.shared.open(URL(string: "https://thomaslegge.github.io/")!)
+            UIApplication.shared.open(URL(string: "https://github.com/thomaslegge/GoodMorning")!)
         }
     }
 }

@@ -11,5 +11,9 @@ import Foundation
 class UserData: NSObject, Codable {
     var isFirstTimeStartup: Bool = true
     var name: String?
-    var city: String?
+    var city: String? = "Auckland"
+    
+    func cityCode() -> String {
+        return self.city!
+    }
 }
