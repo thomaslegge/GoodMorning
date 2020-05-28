@@ -34,7 +34,7 @@ class WebService {
     
     func getWeatherData(completion: @escaping (Result<WeatherData, Error>) -> ()) {
                 
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=" + userLoad.cityCode() + ",nz&appid=9b7cd1bf1c97bcc7598dac88d50b7510&units=metric") else {
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=" + userLoad.cityCode() + ",nz&" + "SECRET" + "&units=metric") else {
             fatalError("Invalid URL")
         }
         
@@ -59,7 +59,7 @@ class WebService {
     
     func getNewsData(completion: @escaping (Result<NewsData, Error>) -> ()) {
         
-        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?apiKey=bb82b42734674b1e8147c1f448b6d748&country=nz") else {
+        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?" + "SECRET" + "&country=nz") else {
             fatalError("Invalid URL")
         }
         
