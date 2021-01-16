@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E930716024513D1D00D1F535 /* NewsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930715F24513D1D00D1F535 /* NewsDataModel.swift */; };
 		E9307162245146E300D1F535 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9307161245146E300D1F535 /* NewsViewModel.swift */; };
+		E964577425B2D58100386FB5 /* ignoredFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E964577325B2D58100386FB5 /* ignoredFile.swift */; };
 		E97D64B5245001300051522E /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D64B4245001300051522E /* WeatherDataModel.swift */; };
 		E97D64B7245001F40051522E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D64B6245001F40051522E /* WebService.swift */; };
 		E97D64B92450044A0051522E /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D64B82450044A0051522E /* WeatherDetailView.swift */; };
@@ -52,6 +53,8 @@
 /* Begin PBXFileReference section */
 		E930715F24513D1D00D1F535 /* NewsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataModel.swift; sourceTree = "<group>"; };
 		E9307161245146E300D1F535 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		E964576F25B2D53600386FB5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E964577325B2D58100386FB5 /* ignoredFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ignoredFile.swift; sourceTree = "<group>"; };
 		E97D64B4245001300051522E /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		E97D64B6245001F40051522E /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		E97D64B82450044A0051522E /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		E9EC5F1B244F1895007C6A99 = {
 			isa = PBXGroup;
 			children = (
+				E964576F25B2D53600386FB5 /* .gitignore */,
 				E9EC5F26244F1895007C6A99 /* GoodMorning */,
 				E9EC5F3D244F189A007C6A99 /* GoodMorningTests */,
 				E9EC5F48244F189A007C6A99 /* GoodMorningUITests */,
@@ -151,6 +155,7 @@
 				E97D64BA245004730051522E /* WeatherViewModel.swift */,
 				E9307161245146E300D1F535 /* NewsViewModel.swift */,
 				E930715F24513D1D00D1F535 /* NewsDataModel.swift */,
+				E964577325B2D58100386FB5 /* ignoredFile.swift */,
 			);
 			path = GoodMorning;
 			sourceTree = "<group>";
@@ -244,7 +249,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Thomas Legge";
 				TargetAttributes = {
 					E9EC5F23244F1895007C6A99 = {
@@ -312,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E964577425B2D58100386FB5 /* ignoredFile.swift in Sources */,
 				E97D64B92450044A0051522E /* WeatherDetailView.swift in Sources */,
 				E97D64BB245004730051522E /* WeatherViewModel.swift in Sources */,
 				E97D64B7245001F40051522E /* WebService.swift in Sources */,
@@ -402,6 +408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -462,6 +469,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
