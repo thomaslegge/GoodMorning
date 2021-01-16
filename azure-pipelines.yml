@@ -10,6 +10,13 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+# CocoaPods
+# Install CocoaPods dependencies for Swift and Objective-C Cocoa projects
+- task: CocoaPods@0
+  inputs:
+    #workingDirectory: # Optional
+    forceRepoUpdate: false
+    #projectDirectory: # Optional
 - task: Xcode@5
   inputs:
     actions: 'build'
