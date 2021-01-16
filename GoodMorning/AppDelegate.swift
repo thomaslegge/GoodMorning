@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import podtest
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let a = GoodMorning.a
+    let b = Pod.b
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

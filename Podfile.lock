@@ -11,12 +11,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   podtest:
-    :commit: 50360b0e3f7883f978e5ad3a2a9fc8bc993ac157
+    :commit: 49ddbdb0fe8f041c30664bdf88e2ae8e84f83397
     :git: https://github.com/thomaslegge/privatePodTest.git
 
 SPEC CHECKSUMS:
   podtest: 167612932755e46aa8e5291b0e939ab35ff73e4a
 
-PODFILE CHECKSUM: e74516d7d118d24bbdfbfd8db5f29a1d027c5ec1
+PODFILE CHECKSUM: 9f1ae65de3fb3d1f25316954621044570f801035
 
 COCOAPODS: 1.10.1
