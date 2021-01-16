@@ -26,19 +26,21 @@ steps:
     script: 'pod install'
 
 - task: DownloadSecureFile@1
+  name: AppDelegate
   inputs:
     secureFile: 'AppDelegate.swift'
 - task: DownloadSecureFile@1
+  name: ignoredFile
   inputs:
     secureFile: 'ignoredFile.swift'
 
 - task: CmdLine@2
   inputs:
-    script: 'ls'
+    script: 'mv $(AppDelegate.secureFilePath) GoodMorning'
 
 - task: CmdLine@2
   inputs:
-    script: 'mv ignoredFile.swift /GoodMorning'
+    script: 'mv $(ignoredFile.secureFilePath) GoodMorning'
 
 - task: Xcode@5
   inputs:
