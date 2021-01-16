@@ -34,7 +34,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'mv AppDelegate.swift /GoodMorning'
+    script: 'ls'
 
 - task: CmdLine@2
   inputs:
