@@ -10,18 +10,29 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: 'sudo gem install cocoapods'
 - task: InstallSSHKey@0
   inputs:
     knownHostsEntry: '$(knownHostsEntry)'
     sshPublicKey: '$(sshPublicKey)'
     sshKeySecureFile: 'azurePrivateKey'
+- task: CmdLine@2
+  inputs:
+    script: 'git config --global url."git@github.com:thomaslegge/privatePodTest".insteadOf "https://github.com/thomaslegge/privatePodTest"'
+
+- task: CmdLine@2
+  inputs:
+    script: 'pod install'
+
 # CocoaPods
 # Install CocoaPods dependencies for Swift and Objective-C Cocoa projects
-- task: CocoaPods@0
-  inputs:
-    #workingDirectory: # Optional
-    forceRepoUpdate: false
-    #projectDirectory: # Optional
+# - task: CocoaPods@0
+#   inputs:
+#     #workingDirectory: # Optional
+#     forceRepoUpdate: false
+#     #projectDirectory: # Optional
 - task: Xcode@5
   inputs:
     actions: 'build'
