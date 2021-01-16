@@ -21,18 +21,25 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'git config --global url."git@github.com:thomaslegge/privatePodTest".insteadOf "https://github.com/thomaslegge/privatePodTest"'
-
 - task: CmdLine@2
   inputs:
     script: 'pod install'
 
-# CocoaPods
-# Install CocoaPods dependencies for Swift and Objective-C Cocoa projects
-# - task: CocoaPods@0
-#   inputs:
-#     #workingDirectory: # Optional
-#     forceRepoUpdate: false
-#     #projectDirectory: # Optional
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'AppDelegate.swift'
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'ignoredFile.swift'
+
+- task: CmdLine@2
+  inputs:
+    script: 'mv AppDelegate.swift /GoodMorning'
+
+- task: CmdLine@2
+  inputs:
+    script: 'mv ignoredFile.swift /GoodMorning'
+
 - task: Xcode@5
   inputs:
     actions: 'build'
