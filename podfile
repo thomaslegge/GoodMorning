@@ -1,0 +1,4 @@
+target 'GoodMorning' do
+  pod 'podtest', :git => 'https://github.com/thomaslegge/privatePodTest.git', :branch => 'master'
+#  pod 'podtest', :path => '/Users/thomas/Documents/Repo/podtest'
+end
