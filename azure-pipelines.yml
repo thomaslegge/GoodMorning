@@ -10,6 +10,8 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+- checkout: self
+  persistCredentials: true
 # CocoaPods
 # Install CocoaPods dependencies for Swift and Objective-C Cocoa projects
 - task: CocoaPods@0
