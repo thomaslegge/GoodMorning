@@ -1,0 +1,52 @@
+# Xcode
+# Build, test, and archive an Xcode workspace on macOS.
+# Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
+
+trigger:
+- main
+
+pool:
+  vmImage: 'macos-latest'
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: 'sudo gem install cocoapods'
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: '$(knownHostsEntry)'
+    sshPublicKey: '$(sshPublicKey)'
+    sshKeySecureFile: 'azurePrivateKey'
+- task: CmdLine@2
+  inputs:
+    script: 'git config --global url."git@github.com:thomaslegge/privatePodTest".insteadOf "https://github.com/thomaslegge/privatePodTest"'
+- task: CmdLine@2
+  inputs:
+    script: 'pod install'
+
+- task: DownloadSecureFile@1
+  name: AppDelegate
+  inputs:
+    secureFile: 'AppDelegate.swift'
+- task: DownloadSecureFile@1
+  name: ignoredFile
+  inputs:
+    secureFile: 'ignoredFile.swift'
+
+- task: CmdLine@2
+  inputs:
+    script: 'mv $(AppDelegate.secureFilePath) GoodMorning'
+
+- task: CmdLine@2
+  inputs:
+    script: 'mv $(ignoredFile.secureFilePath) GoodMorning'
+
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    scheme: ''
+    sdk: 'iphoneos'
+    configuration: 'Release'
+    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+    xcodeVersion: 'default' # Options: 8, 9, 10, 11, default, specifyPath
